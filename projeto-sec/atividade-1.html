@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Raiz Quadrada</title>
+</head>
+<body>
+    <h1>Calculadora de Raiz Quadrada</h1>
+     <hr>
+    <label for="numero">Digite um número:
+    <input type="number" id="numero">
+    </label>
+  
+    <div>
+      <button onclick="calcularRaizQuadrada()">Exibir Raiz Quadrada</button>
+    </div>
+  
+    <h3 id="resultado-raiz"></h3>
+    
+
+  <script>
+    function calcularRaizQuadrada() {
+      var numero = parseFloat(document.getElementById("numero").value);
+      var raiz = 0;
+      
+      for (var i = 0; i <= numero; i++) {
+        if (i * i === numero) {
+          raiz = i;
+          break;
+        }
+      }
+
+      if (raiz > 0) {
+        document.getElementById("resultado-raiz").innerHTML = 
+        "A raiz quadrada de " + numero + " é igual a" + raiz + ".";
+      } else {
+        document.getElementById("resultado-raiz").innerHTML =
+         "Não há raiz exata para " + numero + ".";
+      }
+    }
+  </script>
+</body>
+</html>
